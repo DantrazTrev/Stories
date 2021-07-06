@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import Card from './components/Card/Card'
+import Search from './components/Search/Search'
 import './App.css';
+import {useEffect,useState} from 'react'
+
+const cors_proxy="https://corsetsmf.herokuapp.com";
+
+
 
 function App() {
+   const [stories,setStory]= useState([])
+   const [filterData,setFD]= useState([])
+   
+   const url=cors_proxy+"/https://ace.qtstage.io/api/v1/collections/entertainment"
+  useEffect(() => {
+    const stry = fetch(url)
+    stry.then(
+      (resp)=>{
+       return resp=resp.json()
+      })
+      .then((data)=>{
+       setStory(data.items)
+       setFD(data.items)
+      })
+  },[url])
+
+  const search=(input)=>{
+      const lwsea= input.toLowerCase()
+    setFD(stories.filter((s)=>{ return s.story.headline.toLowerCase().includes(lwsea)}))
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search Searchfn={search}/>
+      <div className="Stories">
+      {filterData.map((story)=>{
+        return <Card key={story.id} story={story}/>
+      })}
+  </div>
     </div>
   );
 }
