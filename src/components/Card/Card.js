@@ -32,7 +32,7 @@ export default function Card({ story }) {
     const formatted_date=moment(published_date).format('YYYY-MM-DD');
   return (
     <div className="card">
-      <img src={imgsr} />
+      <img src={imgsr} alt="" />
       <div class="info">      <h2>{story.story.headline}</h2>
       <h3>{story.story["author-name"]}</h3>
       <h5>{formatted_date}</h5>
