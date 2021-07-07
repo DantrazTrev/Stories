@@ -31,7 +31,7 @@ function App() {
   
   return (
     <div className="App">
-          <Search Searchfn={search}/>
+      <Search Searchfn={search}/>
       <div className="Stories">
       {filterData.map((story)=>{
         return <Card key={story.id} story={story}/>

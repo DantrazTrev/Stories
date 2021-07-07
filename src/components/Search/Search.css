@@ -7,19 +7,13 @@
     margin:20px 0;
 }
 .Search input:focus{
-    transform: scale(1.06);
+    transform: scale(1.1);
 }
 .Search input {
    font-family: Garuda;
    border-color: rgba(117, 114, 114, 0.178);
     font-size: 14px;
-    width: 40%;
    padding: 10px;
-   outline:0;
-   border-radius: 2rem;
-   border: 1px solid rgba(0, 0, 0, 0.13);
-   transition: transform 0.1s ease-in-out;
-    background-color: rgb(255, 255, 255);
-    box-shadow:3px 6px 10px #0000002e;
+   outline: 0;
+   transition: 1s ease-in-out ;
 }
-
