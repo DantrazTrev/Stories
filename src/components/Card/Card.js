@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Card.css";
 import Heart from './Heart/Heart'
+import moment from 'moment';
 const stock_image =
   "https://eagle-sensors.com/wp-content/uploads/unavailable-image.jpg";
 const s3_url = "https://qtstage-01.gumlet.io/";
@@ -27,10 +28,16 @@ export default function Card({ story }) {
         storage.setItem(story.id,!Liked)
     }
 
+    const published_date= Date(story.story["published-at"]);
+    const formatted_date=moment(published_date).format('YYYY-MM-DD');
   return (
     <div className="card">
       <img src={imgsr} />
-      <h2>{story.story.headline}</h2>
+      <div class="info">      <h2>{story.story.headline}</h2>
+      <h3>{story.story["author-name"]}</h3>
+      <h5>{formatted_date}</h5>
+      </div>
+
       <Heart Like={Like} Liked={Liked}/>
     </div>
   );

@@ -4,10 +4,16 @@
     height: 10vw;
     align-items: center;
     justify-content: center;
+    margin:20px 0;
 }
-
+.Search input:focus{
+    transform: scale(1.1);
+}
 .Search input {
-   font-size: 20px;
-   padding: 5px;
-
+   font-family: Garuda;
+   border-color: rgba(117, 114, 114, 0.178);
+    font-size: 14px;
+   padding: 10px;
+   outline: 0;
+   transition: 1s ease-in-out ;
 }

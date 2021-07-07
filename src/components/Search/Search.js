@@ -9,7 +9,8 @@ export default function Search({Searchfn}) {
 
   return (
     <div className="Search">
-      <input placeholder='Search' type="search" onChange={search} />
+
+      <input placeholder='Search...' type="search" onChange={search} />
 
     </div>
   );
