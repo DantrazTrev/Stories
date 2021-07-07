@@ -23,3 +23,10 @@
     box-shadow:3px 6px 10px #0000002e;
 }
 
+@media screen and (max-width:768px) {
+    .Search input{
+        width: 60%;
+    }
+    
+}
+

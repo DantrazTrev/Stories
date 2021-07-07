@@ -15,7 +15,7 @@
     top: 0;
     width: 5px;
     height: 8px;
-    background: gray;
+    background: rgba(190, 190, 190, 0.986);
     border-radius: 5px 5px 0 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
